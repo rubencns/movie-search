@@ -2,3 +2,17 @@ $primary-color: #2892FC;
 $dark-color: #0A233D;
 $accent-color: #FCAD28;
 $text-color: #575757;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul, li {
+    list-style: none;
+}
