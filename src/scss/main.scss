@@ -1,7 +1,16 @@
 $primary-color: #2892FC;
 $dark-color: #0A233D;
 $accent-color: #FCAD28;
-$text-color: #575757;
+$text-color: #3a3a3a;
+$font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+@mixin boxShadow {
+    box-shadow: 1px 1px 5px #ccc;
+}
+
+@mixin transition {
+    transition: all 0.5s ease-out;
+}
 
 * {
     box-sizing: border-box;
@@ -11,8 +20,100 @@ $text-color: #575757;
 
 a {
     text-decoration: none;
+    color: $text-color;
+
+    &:hover {
+        color: $primary-color;
+    }
 }
 
 ul, li {
     list-style: none;
+}
+
+body {
+    font-family: $font-family;
+    color: $text-color;
+    min-height: 100vh;
+}
+
+.header {
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0 30px;
+    @include boxShadow;
+
+    .nav {
+        &-menu {
+            visibility: hidden;
+            position: absolute;
+            top: 82px;
+            right: 0;
+            transform: translate3d(100%, 0, 0);
+            background: #fff;
+            border-radius: 5px;
+            @include transition;
+            @include boxShadow;
+
+            &.show {
+                visibility: visible;
+                transform: translate3d(0, 0, 0);
+                @include transition;   
+            }
+        }
+
+        &-item {
+            margin: 10px;
+            font-size: 1rem;
+            padding: 10px 100px 10px 20px;
+            cursor: pointer;
+
+            &:hover {
+                background: #eee;
+                border-radius: 3px;
+
+                .nav-link {
+                    color: $primary-color;
+                }
+            }
+        }
+
+        &-line {
+            opacity: 0.2;
+        }
+        &-btn {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            cursor: pointer;
+            @include transition;
+
+            .btn-line {
+                height: 4px;
+                width: 30px;
+                background: $text-color;
+                margin-bottom: 5px;
+            }
+
+            &.close {  
+                transform: rotate(90deg);
+                @include transition;
+
+                .btn-line {
+                    &:nth-child(1) {
+                        transform: rotate(45deg) translate(7px, 7px);
+                    }
+                    &:nth-child(2) {
+                        display: none;
+                    }
+                    &:nth-child(3) {
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+    }
 }
