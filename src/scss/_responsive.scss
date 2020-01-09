@@ -77,6 +77,79 @@
             }
         }
     }
+
+    .movie {
+        padding: 0 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: space-around;
+
+        &-poster {
+            width: 100%;
+            margin: 5px 0;
+            border-radius: 5px;
+            @include boxShadow;
+        }
+
+        &-item {
+            margin: 5px 0;
+
+            &.rate-fav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 15px 0;
+            }
+
+            h2 {
+                margin-top: 20px;
+            }
+
+            hr {
+                border: 0.5px solid #ddd;
+                margin: 15px 0;
+            }
+
+            li {
+                margin-bottom: 5px;
+            }
+            
+        }
+
+        &-rating {
+            color: $accent-color;
+
+            span {
+                font-family: $font-family;
+                font-weight: 600;
+            }
+        }
+
+        .fav-btn {
+            padding: 10px 8px;
+            font-size: 0.8rem;
+            color: $primary-color;
+            background: #fff;
+            border: 1px solid $primary-color;
+            border-radius: 5px;
+            cursor: pointer;
+
+            span {
+                font-family: $font-family;
+                font-weight: 600;
+            }
+
+            &:hover {
+                background: $primary-color;
+                color: #fff;
+            }
+        }
+
+        &-plot {
+            font-style: italic;
+        } 
+    }
 }
 
 @media screen and (min-width: 375px) {
@@ -118,5 +191,26 @@
         }
     }
 
+    .movie {
+        display: grid;
+        grid-template: 1fr / 1fr 1fr;
+
+        &-poster {
+            grid-area: 1 / 1 / 2 / 2;
+        }
+
+        &-item {
+            grid-area: 1 / 2 / 2 / 3; 
+            padding: 0px 40px;
+
+            &.rate-fav {
+                justify-content: flex-start;
+
+                .movie-rating {
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
     
 }
