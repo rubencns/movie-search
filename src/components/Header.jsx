@@ -27,7 +27,7 @@ const Header = () => {
     };
 
     return (
-        <header className="header">
+        <header className="header" >
             <div className="logo"><Link to="/"><h2>Movie Search</h2></Link></div>
             <nav className="nav">
                 <div className={`nav-btn${menu.navBtn}`} onClick={() => handleClick()}>
