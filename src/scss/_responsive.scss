@@ -1,4 +1,4 @@
-// Mobiles
+// Small Mobiles
 @media screen and (min-width: 320px) {
 
     .search-input {
@@ -8,16 +8,11 @@
 
 @media screen and (min-width: 365px) {
 
-    .search-bar {
-        padding: 10px 15px;
-    
-        .search-input {
-            font-size: 1.3rem;
-        }
+    .search-input {
+        font-size: 1.3rem;
     }
 }
 
-// Tablet & small laptops
 @media screen and (min-width: 768px) {
 
     .search-bar {
