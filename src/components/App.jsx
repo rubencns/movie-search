@@ -1,13 +1,12 @@
 import React from "react";
 import main from "../scss/main.scss";
-import Header from './Header.jsx';
-import Home from './Home.jsx';
+import Routes from './Routes.jsx';
+
 
 const App = () => (
-    <>
-        <Header />
-        <Home />
-    </>
+
+    <Routes />
+
 )
 
 export default App;

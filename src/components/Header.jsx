@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink, Link } from 'react-router-dom';
 
 const Header = () => {
 
@@ -27,7 +28,7 @@ const Header = () => {
 
     return (
         <header className="header">
-            <div className="logo"><h2>Movie Search</h2></div>
+            <div className="logo"><Link to="/"><h2>Movie Search</h2></Link></div>
             <nav className="nav">
                 <div className={`nav-btn${menu.navBtn}`} onClick={() => handleClick()}>
                     <div className="btn-line"></div>
@@ -35,9 +36,9 @@ const Header = () => {
                     <div className="btn-line"></div>
                 </div>
                 <ul className={`nav-menu${menu.navMenu}`}>
-                    <li className="nav-item"><a href="#" className="nav-link">Home</a></li>
+                    <NavLink to="/" className="nav-link"><li className="nav-item">Home</li></NavLink>
                     <hr className="nav-line" />
-                    <li className="nav-item"><a href="#" className="nav-link">Favorites</a></li>
+                    <NavLink to="/favorites" className="nav-link"><li className="nav-item">Favorites</li></NavLink>
                 </ul>
             </nav>
         </header>
