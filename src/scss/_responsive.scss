@@ -3,6 +3,7 @@
 
     .search-input {
         font-size: 1rem;
+        padding: 10px 25px;
     }
 
     .nav {
@@ -16,6 +17,7 @@
             border-radius: 5px;
             /* @include transition; */
             @include boxShadow;
+            z-index: 2;
 
             &.show {
                 visibility: visible;
@@ -77,16 +79,23 @@
     }
 }
 
-@media screen and (min-width: 365px) {
+@media screen and (min-width: 375px) {
 
     .search-input {
         font-size: 1.3rem;
+        padding: 10px 35px;
     }
+    
 }
 
 // Small laptops and tablets
 
 @media screen and (min-width: 768px) {
+
+    .search-input {
+        font-size: 1.3rem;
+        padding: 10px 80px;
+    }
 
     .nav-btn {
         display: none;
@@ -109,11 +118,5 @@
         }
     }
 
-    .search-bar {
-        padding: 10px 30px;
     
-        .search-input {
-            font-size: 1.3rem;
-        }
-    }
 }
