@@ -1,22 +1,6 @@
-$primary-color: #2892FC;
-$dark-color: #0A233D;
-$accent-color: #FCAD28;
-$text-color: #3a3a3a;
-$font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-@mixin boxShadow {
-    box-shadow: 1px 1px 5px #ccc;
-}
-
-@mixin transition {
-    transition: all 0.5s ease-out;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+@import 'reset';
+@import 'config';
+@import 'responsive';
 
 a {
     text-decoration: none;
@@ -25,10 +9,6 @@ a {
     &:hover {
         color: $primary-color;
     }
-}
-
-ul, li {
-    list-style: none;
 }
 
 body {
@@ -127,7 +107,6 @@ body {
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        /* background: #eee; */
         border-radius: 5px; 
 
         &-heading {
@@ -144,7 +123,6 @@ body {
             background: #fff;
 
             .search-input {
-                font-size: 1.3rem;
                 padding: 0 10px;
                 border-style: none;
             }
@@ -155,6 +133,11 @@ body {
                 font-size: 1.2rem;
                 color: $primary-color;
                 border-right: 1px solid #ddd;
+                cursor: pointer;
+
+                &:hover {
+                    color: $accent-color;
+                }
             }
         }
     }

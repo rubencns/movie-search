@@ -1,0 +1,13 @@
+$primary-color: #2892FC;
+$dark-color: #0A233D;
+$accent-color: #FCAD28;
+$text-color: #3a3a3a;
+$font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+@mixin boxShadow {
+    box-shadow: 1px 1px 5px #ccc;
+}
+
+@mixin transition {
+    transition: all 0.5s ease-out;
+}
