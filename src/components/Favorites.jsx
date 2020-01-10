@@ -1,9 +1,14 @@
 import React from 'react';
+import Favorite from './Favorite';
 
 const Favorites = () => (
-    <>
-        <h1>Favorite movies</h1>
-    </>
+    <main className="favorites">
+        <Favorite />
+        <Favorite />
+        <Favorite />
+        <Favorite />
+        <Favorite />
+    </main>
 );
 
 export default Favorites;

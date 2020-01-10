@@ -9,7 +9,7 @@ const Movie = () => {
             <img className="movie-poster"
                 src="https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@.jpg"
                 alt="Movie Poster" />
-            <div className="items">
+            <div className="movie-items">
                 <h1 className="movie-item">Joker</h1>
                 <span className="movie-item">2019</span>
                 <div className="movie-item rate-fav">
