@@ -3,30 +3,34 @@ import { connect } from 'react-redux';
 
 const Movie = ({ movie }) => {
 
+    const castList = movie.cast;
 
     return (
 
         <div className="movie">
             <img className="movie-poster"
-                src="https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@.jpg"
+                src={movie.poster}
                 alt="Movie Poster" />
             <div className="movie-items">
-                <h1>{movie.title}</h1>
-                <h1 className="movie-item">Joker</h1>
-                <span className="movie-item">2019</span>
+                <h1 className="movie-item">{movie.title}</h1>
+                <span className="movie-item">{movie.year}</span>
                 <div className="movie-item rate-fav">
                     <div className="movie-rating">
-                        <i className="fas fa-star"> <span>8.6</span></i>
+                        <i className="fas fa-star"> <span>{movie.rating}</span></i>
                     </div>
                     <button className="fav-btn">
                         <i className="fas fa-heart"> <span>Add to favorites</span></i>
                     </button>
                 </div>
-                <p className="movie-item movie-plot">"In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: the Joker."</p>
-                <span className="movie-item">2h 20min</span>
+                <p className="movie-item movie-plot">{movie.plot}</p>
+                <span className="movie-item">{movie.length}</span>
                 <ul className="movie-item">
                     <h2>Cast:</h2>
                     <hr />
+                    {
+                        /* castList.map(p => (<li>{p.actor} - {p.character}</li>)) */
+                    }
+
                     <li>Joaquin Phoenix - Arthur Fleck</li>
                     <li>Robert De Niro - Murray Franklin</li>
                     <li>Zazie Beetz - Sophie Dumond</li>
