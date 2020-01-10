@@ -17,7 +17,7 @@
             border-radius: 5px;
             /* @include transition; */
             @include boxShadow;
-            z-index: 2;
+            z-index: 3;
 
             &.show {
                 visibility: visible;

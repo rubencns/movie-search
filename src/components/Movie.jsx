@@ -1,9 +1,8 @@
 import React from 'react';
+import { addToFavorites } from './redux/actionCreators';
 import { connect } from 'react-redux';
 
-const Movie = ({ movie }) => {
-
-    const castList = movie.cast;
+const Movie = ({ movie, addMovieToFavorites }) => {
 
     return (
 
@@ -18,7 +17,7 @@ const Movie = ({ movie }) => {
                     <div className="movie-rating">
                         <i className="fas fa-star"> <span>{movie.rating}</span></i>
                     </div>
-                    <button className="fav-btn">
+                    <button className="fav-btn" onClick={() => addMovieToFavorites(movie)}>
                         <i className="fas fa-heart"> <span>Add to favorites</span></i>
                     </button>
                 </div>
@@ -28,7 +27,7 @@ const Movie = ({ movie }) => {
                     <h2>Cast:</h2>
                     <hr />
                     {
-                        /* castList.map(p => (<li>{p.actor} - {p.character}</li>)) */
+                        /* movie.cast.map(p => (<li>{p.actor} - {p.character}</li>)) */
                     }
 
                     <li>Joaquin Phoenix - Arthur Fleck</li>
@@ -43,13 +42,19 @@ const Movie = ({ movie }) => {
 
                 </ul>
             </div>
-        </div>
+        </div >
     );
 
 };
 
 const mapStateToProps = state => ({
-    movie: state.movie
+    movie: state.movieReducer.movie
 })
 
-export default connect(mapStateToProps)(Movie);
+const mapDispatchToProps = dispatch => ({
+    addMovieToFavorites(movie) {
+        dispatch(addToFavorites(movie));
+    }
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Movie);

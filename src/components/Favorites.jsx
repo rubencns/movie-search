@@ -1,14 +1,26 @@
 import React from 'react';
 import Favorite from './Favorite';
+import { connect } from 'react-redux';
 
-const Favorites = () => (
+const Favorites = ({ fav }) => (
+
     <main className="favorites">
-        <Favorite />
-        <Favorite />
-        <Favorite />
-        <Favorite />
-        <Favorite />
+        {
+            fav.find(f => f)
+                ? fav.map(f =>
+                    <Favorite
+                        title={f.title}
+                        year={f.year}
+                        rating={f.rating}
+                        image={f.poster}
+                    />)
+                : "No favorites"
+        }
     </main>
 );
 
-export default Favorites;
+const mapStateToProps = state => ({
+    fav: state.favoriteReducer.favorites
+});
+
+export default connect(mapStateToProps)(Favorites);

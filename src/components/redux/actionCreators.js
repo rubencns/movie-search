@@ -1,4 +1,4 @@
-import { ADD_MOVIE } from './actions';
+import { ADD_MOVIE, ADD_FAVORITE, REMOVE_FAVORITE } from './actions';
 
 const getMovie = (movieName) => dispatch => {
 
@@ -35,4 +35,14 @@ const getMovie = (movieName) => dispatch => {
         });
 }
 
-export { getMovie };
+const addToFavorites = (favorite) => ({
+    type: ADD_FAVORITE,
+    favorite: favorite
+})
+
+const removeFromFavorites = (title) => ({
+    type: REMOVE_FAVORITE,
+    title
+})
+
+export { getMovie, addToFavorites, removeFromFavorites };
