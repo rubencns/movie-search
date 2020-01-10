@@ -26,9 +26,18 @@ const Header = () => {
         }
     };
 
+    // Hide menu when a link is clicked
+    const hideMenu = () => {
+        setMenu({
+            ...menu,
+            navBtn: '',
+            navMenu: ''
+        })
+    }
+
     return (
         <header className="header" >
-            <div className="logo"><Link to="/"><h2>Movie Search</h2></Link></div>
+            <div className="logo"><Link to="/" onClick={() => hideMenu()}><h2>Movie Search</h2></Link></div>
             <nav className="nav">
                 <div className={`nav-btn${menu.navBtn}`} onClick={() => handleClick()}>
                     <div className="btn-line"></div>
@@ -36,9 +45,9 @@ const Header = () => {
                     <div className="btn-line"></div>
                 </div>
                 <ul className={`nav-menu${menu.navMenu}`}>
-                    <NavLink to="/" className="nav-link"><li className="nav-item">Home</li></NavLink>
+                    <NavLink to="/" className="nav-link" onClick={() => hideMenu()}> <li className="nav-item" >Home</li></NavLink>
                     <hr className="nav-line" />
-                    <NavLink to="/favorites" className="nav-link"><li className="nav-item">Favorites</li></NavLink>
+                    <NavLink to="/favorites" className="nav-link" onClick={() => hideMenu()}> <li className="nav-item">Favorites</li></NavLink>
                 </ul>
             </nav>
         </header>
