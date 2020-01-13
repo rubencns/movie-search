@@ -12,11 +12,7 @@ const Movie = ({ movie, id, poster, title, year, rating,
                 src={poster}
                 alt="Movie Poster" />
             <div className="movie-items">
-                <h1 className="movie-item">
-                    {
-                        title
-                    }
-                </h1>
+                <h1 className="movie-item">{title}</h1>
                 <span className="movie-item">{year}</span>
                 <div className="movie-item rate-fav">
                     <div className="movie-rating">
@@ -40,7 +36,14 @@ const Movie = ({ movie, id, poster, title, year, rating,
 
                 </div>
                 <p className="movie-item movie-plot">{plot}</p>
-                <span className="movie-item">{length}</span>
+                <span className="movie-item">
+                    {
+                        // If movie length is 0 by default, set defaultProps.length
+                        (length == 0)
+                            ? Movie.defaultProps.length
+                            : length
+                    }
+                </span>
                 <ul className="movie-item">
                     <h2>Cast:</h2>
                     <hr />
