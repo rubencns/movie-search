@@ -14,7 +14,7 @@ const Favorites = ({ fav }) => (
                         rating={f.rating}
                         image={f.poster}
                     />)
-                : "No favorites"
+                : <><h1>You haven't added any movie to your favorite list yet</h1></>
         }
     </main>
 );

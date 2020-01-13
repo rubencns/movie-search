@@ -15,6 +15,13 @@ const SearchBar = ({ showMovie }) => {
         })
     }
 
+    const pressEnter = (e) => {
+        // if enter key is pressed, call showMovie function
+        if (e.keyCode === 13) {
+            showMovie(movie.movieName);
+        }
+    }
+
     return (
         <div className="search">
             <div className="search-bar">
@@ -26,6 +33,7 @@ const SearchBar = ({ showMovie }) => {
                     className="search-input"
                     placeholder="search for a movie..."
                     onChange={(e) => handleClick(e)}
+                    onKeyDown={(e) => pressEnter(e)}
                 />
             </div>
         </div >
