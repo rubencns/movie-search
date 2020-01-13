@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { removeFromFavorites } from './redux/actionCreators';
 
-const Favorite = ({ title, year, rating, image, removeFavorite }) => (
+const Favorite = ({ id, title, year, rating, image, removeMovieFromFavorites }) => (
     <div className="card">
         <img className="card-image"
             src={image}
@@ -15,7 +15,7 @@ const Favorite = ({ title, year, rating, image, removeFavorite }) => (
                 <div className="movie-rating">
                     <i className="fas fa-star"> <span>{rating}</span></i>
                 </div>
-                <button className="fav-btn" onClick={() => removeFavorite(title)}>
+                <button className="fav-btn" onClick={() => removeMovieFromFavorites(id)}>
                     <i className="fas fa-heart"> <span>Remove favorite</span></i>
                 </button>
             </div>
@@ -24,8 +24,8 @@ const Favorite = ({ title, year, rating, image, removeFavorite }) => (
 );
 
 const mapDispatchToProps = dispatch => ({
-    removeFavorite(title) {
-        dispatch(removeFromFavorites(title))
+    removeMovieFromFavorites(id) {
+        dispatch(removeFromFavorites(id))
     }
 });
 

@@ -1,28 +1,42 @@
 import React from 'react';
-import { addToFavorites } from './redux/actionCreators';
+import { addToFavorites, removeFromFavorites } from './redux/actionCreators';
 import { connect } from 'react-redux';
 
-const Movie = ({ movie, addMovieToFavorites }) => {
+const Movie = ({ movie, id, poster, title, year, rating,
+    plot, length, cast, fav, addMovieToFavorites, removeMovieFromFavorites }) => {
 
     return (
 
         <div className="movie">
             <img className="movie-poster"
-                src={movie.poster}
+                src={poster}
                 alt="Movie Poster" />
             <div className="movie-items">
-                <h1 className="movie-item">{movie.title}</h1>
-                <span className="movie-item">{movie.year}</span>
+                <h1 className="movie-item">{title}</h1>
+                <span className="movie-item">{year}</span>
                 <div className="movie-item rate-fav">
                     <div className="movie-rating">
-                        <i className="fas fa-star"> <span>{movie.rating}</span></i>
+                        <i className="fas fa-star"> <span>{rating}</span></i>
                     </div>
-                    <button className="fav-btn" onClick={() => addMovieToFavorites(movie)}>
-                        <i className="fas fa-heart"> <span>Add to favorites</span></i>
-                    </button>
+
+                    {
+                        // Validate if movie is already added to favorite list
+                        fav.find(f => f.id === id)
+                            ? <button className="fav-btn fav-btn-disable"
+                                onClick={() => removeMovieFromFavorites(id)}>
+                                <i className="fas fa-heart">
+                                    <span> Remove from favorites</span></i>
+                            </button>
+                            : <button className="fav-btn"
+                                onClick={() => addMovieToFavorites(movie)}>
+                                <i className="fas fa-heart">
+                                    <span> Add to favorites</span></i>
+                            </button>
+                    }
+
                 </div>
-                <p className="movie-item movie-plot">{movie.plot}</p>
-                <span className="movie-item">{movie.length}</span>
+                <p className="movie-item movie-plot">{plot}</p>
+                <span className="movie-item">{length}</span>
                 <ul className="movie-item">
                     <h2>Cast:</h2>
                     <hr />
@@ -45,16 +59,20 @@ const Movie = ({ movie, addMovieToFavorites }) => {
         </div >
     );
 
+
 };
 
 const mapStateToProps = state => ({
-    movie: state.movieReducer.movie
-})
+    fav: state.favoriteReducer.favorites
+});
 
 const mapDispatchToProps = dispatch => ({
     addMovieToFavorites(movie) {
         dispatch(addToFavorites(movie));
+    },
+    removeMovieFromFavorites(id) {
+        dispatch(removeFromFavorites(id))
     }
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Movie);

@@ -46,6 +46,16 @@ a {
         background: $primary-color;
         color: #fff;
     }
+
+    &-disable {
+        color: #fff;
+        background: $primary-color;
+
+        &:hover {
+            background: #fff;
+            color: $primary-color;
+        }
+    }
 }
 
 body {

@@ -9,12 +9,13 @@ const Favorites = ({ fav }) => (
             fav.find(f => f)
                 ? fav.map(f =>
                     <Favorite
+                        id={f.id}
                         title={f.title}
                         year={f.year}
                         rating={f.rating}
                         image={f.poster}
                     />)
-                : <><h1>You haven't added any movie to your favorite list yet</h1></>
+                : <><h1>You haven't added any movie to your favorite list</h1></>
         }
     </main>
 );

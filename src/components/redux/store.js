@@ -30,7 +30,7 @@ const favoriteReducer = (state = initialFavorites, action) => {
     if (action.type === REMOVE_FAVORITE) {
         return {
             ...state,
-            favorites: state.favorites.filter(f => f.title !== action.title)
+            favorites: state.favorites.filter(f => f.id !== action.id)
         }
     }
 

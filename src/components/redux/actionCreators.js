@@ -40,9 +40,9 @@ const addToFavorites = (favorite) => ({
     favorite: favorite
 })
 
-const removeFromFavorites = (title) => ({
+const removeFromFavorites = (id) => ({
     type: REMOVE_FAVORITE,
-    title
+    id
 })
 
 export { getMovie, addToFavorites, removeFromFavorites };
