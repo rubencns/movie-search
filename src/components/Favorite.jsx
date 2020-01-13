@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { removeFromFavorites } from './redux/actionCreators';
+import { Link } from 'react-router-dom';
 
 const Favorite = ({ id, title, year, rating, image, removeMovieFromFavorites }) => {
 
@@ -27,9 +28,9 @@ const Favorite = ({ id, title, year, rating, image, removeMovieFromFavorites }) 
                     <div className="movie-rating">
                         <i className="fas fa-star"> <span>{rating}</span></i>
                     </div>
-                    <button className="fav-btn" onClick={() => removeMovieFromFavorites(id)}>
+                    <Link to="favorites" className="fav-btn" onClick={() => removeMovieFromFavorites(id)}>
                         <i className="fas fa-heart"> <span>Remove favorite</span></i>
-                    </button>
+                    </Link>
                 </div>
             </div>
         </div>
