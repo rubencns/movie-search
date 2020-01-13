@@ -1,11 +1,11 @@
-import { ADD_MOVIE, ADD_FAVORITE, REMOVE_FAVORITE } from './actions';
+import { SHOW_MOVIE, ADD_FAVORITE, REMOVE_FAVORITE } from './actions';
 
-const getMovie = (movieName) => dispatch => {
+const getMovie = (title) => dispatch => {
 
     const decoder = new TextDecoder("utf-8");
 
     fetch(
-        `https://imdb-internet-movie-database-unofficial.p.rapidapi.com/film/${movieName}`,
+        `https://imdb-internet-movie-database-unofficial.p.rapidapi.com/film/${title}`,
         {
             method: "GET",
             headers: {
@@ -21,7 +21,7 @@ const getMovie = (movieName) => dispatch => {
                 .read()
                 .then(({ value, done }) => {
                     return dispatch({
-                        type: ADD_MOVIE,
+                        type: SHOW_MOVIE,
                         movie: JSON.parse(decoder.decode(value))
                     })
                 })
@@ -35,6 +35,11 @@ const getMovie = (movieName) => dispatch => {
         });
 }
 
+const showFavMovie = (movie) => ({
+    type: SHOW_MOVIE,
+    movie
+})
+
 const addToFavorites = (favorite) => ({
     type: ADD_FAVORITE,
     favorite: favorite
@@ -45,4 +50,4 @@ const removeFromFavorites = (id) => ({
     id
 })
 
-export { getMovie, addToFavorites, removeFromFavorites };
+export { getMovie, addToFavorites, removeFromFavorites, showFavMovie };

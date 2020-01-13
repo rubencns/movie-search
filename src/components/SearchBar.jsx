@@ -5,27 +5,27 @@ import { getMovie } from './redux/actionCreators';
 const SearchBar = ({ showMovie }) => {
 
     const [movie, setMovie] = useState({
-        movieName: ''
+        title: ''
     });
 
     const handleClick = (e) => {
         e.preventDefault();
         setMovie({
-            movieName: e.target.value
+            title: e.target.value
         })
     }
 
     const pressEnter = (e) => {
         // if enter key is pressed, call showMovie function
         if (e.keyCode === 13) {
-            showMovie(movie.movieName);
+            showMovie(movie.title);
         }
     }
 
     return (
         <div className="search">
             <div className="search-bar">
-                <div className="search-icon" onClick={() => showMovie(movie.movieName)}>
+                <div className="search-icon" onClick={() => showMovie(movie.title)}>
                     <i className="fas fa-search"></i>
                 </div>
                 <input
@@ -41,8 +41,8 @@ const SearchBar = ({ showMovie }) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-    showMovie(movieName) {
-        dispatch(getMovie(movieName));
+    showMovie(title) {
+        dispatch(getMovie(title));
     }
 });
 
