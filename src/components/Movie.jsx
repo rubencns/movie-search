@@ -12,7 +12,11 @@ const Movie = ({ movie, id, poster, title, year, rating,
                 src={poster}
                 alt="Movie Poster" />
             <div className="movie-items">
-                <h1 className="movie-item">{title}</h1>
+                <h1 className="movie-item">
+                    {
+                        title
+                    }
+                </h1>
                 <span className="movie-item">{year}</span>
                 <div className="movie-item rate-fav">
                     <div className="movie-rating">
@@ -61,6 +65,15 @@ const Movie = ({ movie, id, poster, title, year, rating,
 
 
 };
+
+Movie.defaultProps = {
+    title: "No title",
+    year: "Unknown release date",
+    rating: "No rating",
+    plot: "No plot",
+    length: "Unknown length",
+    cast: "Unknown cast"
+}
 
 const mapStateToProps = state => ({
     fav: state.favoriteReducer.favorites

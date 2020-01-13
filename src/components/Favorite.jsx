@@ -26,6 +26,12 @@ const Favorite = ({ id, title, year, rating, image, removeMovieFromFavorites }) 
     )
 }
 
+Favorite.defaultProps = {
+    title: "No title",
+    year: "Unknown release date",
+    rating: "No rating",
+}
+
 const mapDispatchToProps = dispatch => ({
     removeMovieFromFavorites(id) {
         dispatch(removeFromFavorites(id));
