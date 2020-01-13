@@ -72,6 +72,15 @@ body {
     padding: 0 30px;
     background: #fff;
     @include boxShadow;
+
+    .fav-count {
+        padding: 1.5px 3px;
+        margin: 0 4px;
+        font-size: 0.9rem;
+        color: $primary-color;
+        border: 1px solid $primary-color;
+        border-radius: 3px;
+    }
 }
 
 .home {

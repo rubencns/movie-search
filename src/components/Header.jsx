@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-const Header = () => {
+const Header = ({ favCount }) => {
 
     const [menu, setMenu] = useState({
         show: false,
@@ -45,13 +46,21 @@ const Header = () => {
                     <div className="btn-line"></div>
                 </div>
                 <ul className={`nav-menu${menu.navMenu}`}>
-                    <NavLink to="/" className="nav-link" onClick={() => hideMenu()}> <li className="nav-item" >Home</li></NavLink>
+                    <NavLink to="/" className="nav-link" onClick={() => hideMenu()}>
+                        <li className="nav-item" >Home</li>
+                    </NavLink>
                     <hr className="nav-line" />
-                    <NavLink to="/favorites" className="nav-link" onClick={() => hideMenu()}> <li className="nav-item">Favorites</li></NavLink>
+                    <NavLink to="/favorites" className="nav-link" onClick={() => hideMenu()}>
+                        <li className="nav-item">Favorites <span className="fav-count">{favCount}</span></li>
+                    </NavLink>
                 </ul>
             </nav>
         </header>
     )
 }
 
-export default Header;
+const mapStateToProps = state => ({
+    favCount: state.favoriteReducer.favorites.length
+});
+
+export default connect(mapStateToProps)(Header);
