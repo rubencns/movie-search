@@ -16,6 +16,7 @@ const randomMovie = () => {
 
 store.dispatch(getMovie(randomMovie()));
 
+// App
 const App = () => (
 
     <Provider store={store}>

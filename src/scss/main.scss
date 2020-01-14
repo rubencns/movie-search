@@ -27,6 +27,26 @@ a {
     }
 }
 
+.heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+
+    &-item {
+        margin: 20px;
+    }
+
+    &-btn {
+        cursor: pointer;
+
+        &:hover {
+            color: $primary-color;
+        }
+    }
+}
+
 .fav-btn {
     padding: 10px 8px;
     font-size: 0.8rem;

@@ -3,6 +3,7 @@ import SearchBar from './SearchBar.jsx';
 import Movie from './Movie.jsx';
 import { connect } from 'react-redux';
 
+
 const Home = ({ movie }) => (
     <main className="home">
         <SearchBar />

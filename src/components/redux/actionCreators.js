@@ -1,4 +1,4 @@
-import { SHOW_MOVIE, ADD_FAVORITE, REMOVE_FAVORITE } from './actions';
+import { SHOW_MOVIE, ADD_FAVORITE, REMOVE_FAVORITE, SET_LOADER } from './actions';
 
 const getMovie = (title) => dispatch => {
 
@@ -50,4 +50,8 @@ const removeFromFavorites = (id) => ({
     id
 })
 
-export { getMovie, addToFavorites, removeFromFavorites, showFavMovie };
+const setLoader = () => ({
+    type: SET_LOADER
+})
+
+export { getMovie, addToFavorites, removeFromFavorites, showFavMovie, setLoader };

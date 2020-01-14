@@ -1,6 +1,6 @@
 import React from 'react';
 import Favorite from './Favorite';
-import { getMovie, showFavMovie } from './redux/actionCreators';
+import { showFavMovie } from './redux/actionCreators';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -19,7 +19,10 @@ const Favorites = ({ fav, showMovie }) => (
                             image={f.poster}
                         />
                     </Link>)
-                : <><h1>You haven't added any movie to your favorite list</h1></>
+                : <div className="heading">
+                    <h2 className="heading-item">Add a movie to your favorite list...</h2>
+                    <Link to="/" className="heading-item heading-btn fas fa-plus-circle fa-5x"></Link>
+                </div>
         }
     </main >
 );

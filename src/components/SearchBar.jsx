@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { getMovie } from './redux/actionCreators';
+import { getMovie, setLoader } from './redux/actionCreators';
 
 const SearchBar = ({ showMovie }) => {
 
@@ -42,7 +42,10 @@ const SearchBar = ({ showMovie }) => {
 
 const mapDispatchToProps = dispatch => ({
     showMovie(title) {
-        dispatch(getMovie(title));
+        if (title !== '') {
+            dispatch(getMovie(title));
+            dispatch(setLoader())
+        } else alert("Please, enter a movie")
     }
 });
 
