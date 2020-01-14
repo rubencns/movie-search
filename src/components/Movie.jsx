@@ -5,14 +5,20 @@ import { connect } from 'react-redux';
 const Movie = ({ movie, id, poster, title, year, rating,
     plot, length, cast, fav, addMovieToFavorites, removeMovieFromFavorites, loader }) => {
 
+    let timeout;
+
     const [time, setTime] = useState({
         hasExpired: false
     })
-    const loading = () => setTimeout(() => {
-        setTime({
-            hasExpired: true
-        })
-    }, 6000)
+    const loading = () => {
+        timeout = setTimeout(() => {
+            setTime({
+                hasExpired: true
+            })
+        }, 6000)
+
+        return "";
+    }
 
     return (
         // Show loader icon until the data is loaded
@@ -26,8 +32,10 @@ const Movie = ({ movie, id, poster, title, year, rating,
                         // Give 6 seconds to load. If time is exceeded throw a message error
                         (!time.hasExpired)
                             ? <i className="heading fas fa-spinner fa-spin fa-5x"></i>
-                            : <div className="heading"><i className="heading-item far fa-times-circle fa-5x"></i>
+                            : <><div className="heading"><i className="heading-item far fa-times-circle fa-5x"></i>
                                 <h2 className="heading-item">No movie found... Try it again</h2></div>
+                                {clearTimeout(timeout)}
+                            </>
                     }
                 </>
                 : <div className="movie">
