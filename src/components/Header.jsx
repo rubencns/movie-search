@@ -11,6 +11,11 @@ const Header = ({ favCount }) => {
         navItem: ''
     });
 
+
+    /*
+        If burger menu (for small sizes) is clicked, add 'show' to nav-menu class
+        and 'close' to nav-btn class
+    */
     const handleClick = () => {
         if (menu.show === true) {
             setMenu({
@@ -27,7 +32,7 @@ const Header = ({ favCount }) => {
         }
     };
 
-    // Hide menu when a link is clicked
+    // Hide menu when its open and the link of the logo is clicked
     const hideMenu = () => {
         setMenu({
             ...menu,

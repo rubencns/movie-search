@@ -9,7 +9,8 @@ const Movie = ({ movie, id, poster, title, year, rating,
 
     const [time, setTime] = useState({
         hasExpired: false
-    })
+    });
+
     const loading = () => {
         timeout = setTimeout(() => {
             setTime({
@@ -55,12 +56,12 @@ const Movie = ({ movie, id, poster, title, year, rating,
                                     ? <button className="fav-btn fav-btn-disable"
                                         onClick={() => removeMovieFromFavorites(id)}>
                                         <i className="fas fa-heart">
-                                            <span> Remove from favorites</span></i>
+                                            <span> {/* Remove from favorites */}</span></i>
                                     </button>
                                     : <button className="fav-btn"
                                         onClick={() => addMovieToFavorites(movie)}>
                                         <i className="fas fa-heart">
-                                            <span> Add to favorites</span></i>
+                                            <span> {/* Add to favorites */}</span></i>
                                     </button>
                             }
 
@@ -78,7 +79,7 @@ const Movie = ({ movie, id, poster, title, year, rating,
                             <h2>Cast:</h2>
                             <hr />
                             {
-                                movie.cast.map(p => (<li><span className="movie-actor">{p.actor}</span> - {p.character}</li>))
+                                cast.map(p => (<li><span className="movie-actor">{p.actor}</span> - {p.character}</li>))
                             }
 
                         </ul>

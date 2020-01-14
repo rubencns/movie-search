@@ -15,7 +15,7 @@ const Favorite = ({ id, title, year, rating, image, removeMovieFromFavorites }) 
                 <div className="card-title">
                     <h2>
                         {
-                            // Shortens the title if it is too long
+                            // Shortens the title if it is too long and add ellipsis
                             (title.length < 16)
                                 ? title
                                 : title.substr(0, 16).concat('...')
@@ -28,8 +28,8 @@ const Favorite = ({ id, title, year, rating, image, removeMovieFromFavorites }) 
                     <div className="movie-rating">
                         <i className="fas fa-star"> <span>{rating}</span></i>
                     </div>
-                    <Link to="favorites" className="fav-btn" onClick={() => removeMovieFromFavorites(id)}>
-                        <i className="fas fa-heart"> <span>Remove favorite</span></i>
+                    <Link to="favorites" className="fav-btn fav-btn-disable" onClick={() => removeMovieFromFavorites(id)}>
+                        <i className="fas fa-heart"> {/* <span>Remove favorite</span> */}</i>
                     </Link>
                 </div>
             </div>

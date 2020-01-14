@@ -16,7 +16,7 @@ const SearchBar = ({ showMovie }) => {
     }
 
     const pressEnter = (e) => {
-        // if enter key is pressed, call showMovie function
+        // If enter key is pressed, call showMovie function
         if (e.keyCode === 13) {
             showMovie(movie.title);
         }
@@ -43,6 +43,7 @@ const SearchBar = ({ showMovie }) => {
                     onKeyDown={(e) => pressEnter(e)}
                 />
                 {
+                    // If input is not empty, add reset button. If it is filled, remove it. 
                     (movie.title !== '')
                         ? <button type="reset" className="reset-icon fas fa-times"
                             onClick={() => resetInput()}>

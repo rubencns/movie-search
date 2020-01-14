@@ -8,6 +8,10 @@ const Favorites = ({ fav, showMovie }) => (
 
     <main className="favorites">
         {
+            /* 
+                If there is a movie saved in the favorites list, show it. If not, 
+                add a recommendation 
+            */
             fav.find(f => f)
                 ? fav.map(f =>
                     <Link to="/" onClick={() => showMovie(f)} >
@@ -20,7 +24,7 @@ const Favorites = ({ fav, showMovie }) => (
                         />
                     </Link>)
                 : <div className="heading">
-                    <h2 className="heading-item">Add a movie to your favorite list...</h2>
+                    <h2 className="heading-item">Add a movie to your favorites list...</h2>
                     <Link to="/" className="heading-item heading-btn fas fa-plus-circle fa-5x"></Link>
                 </div>
         }

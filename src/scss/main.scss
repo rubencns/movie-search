@@ -133,7 +133,6 @@ body {
             background: #fff;
             border-style: none;
             @include boxShadow;
-
             .search-input {
                 border-style: none;
             }
@@ -150,7 +149,7 @@ body {
                     color: $accent-color;
                 }
             }
-
+            
             .reset-icon {
                 padding: 0 15px;
                 font-size: 1.6rem;
