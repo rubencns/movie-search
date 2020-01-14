@@ -3,7 +3,7 @@
 
     .search-input {
         font-size: 1rem;
-        padding: 10px 25px;
+        padding: 10px 0;
     }
 
     .nav {
@@ -125,7 +125,7 @@
 
     .search-input {
         font-size: 1.3rem;
-        padding: 10px 35px 10px 10px;
+        padding: 10px;
     }
     
 }
@@ -133,11 +133,6 @@
 // Small laptops and tablets
 
 @media screen and (min-width: 768px) {
-
-    .search-input {
-        font-size: 1.3rem;
-        padding: 10px 80px 10px 10px;
-    }
 
     .nav-btn {
         display: none;

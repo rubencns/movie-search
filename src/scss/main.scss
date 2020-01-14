@@ -11,6 +11,10 @@ a {
     }
 }
 
+button:focus, input:focus{
+    outline: none;
+}
+
 .rate-fav {
     display: flex;
     justify-content: space-between;
@@ -144,6 +148,21 @@ body {
 
                 &:hover {
                     color: $accent-color;
+                }
+            }
+
+            .reset-icon {
+                padding: 0 15px;
+                font-size: 1.6rem;
+                color: rgb(116, 116, 116);
+                background: none;
+                border: none;
+                cursor: pointer;
+                
+                &-hidden {
+                    padding: 0 15px;
+                    font-size: 1.6rem;
+                    visibility: hidden;
                 }
             }
         }

@@ -16,8 +16,6 @@ const Movie = ({ movie, id, poster, title, year, rating,
                 hasExpired: true
             })
         }, 6000)
-
-        return "";
     }
 
     return (

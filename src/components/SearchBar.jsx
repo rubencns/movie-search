@@ -22,6 +22,12 @@ const SearchBar = ({ showMovie }) => {
         }
     }
 
+    const resetInput = (e) => {
+        setMovie({
+            title: ''
+        })
+    }
+
     return (
         <div className="search">
             <div className="search-bar">
@@ -32,9 +38,18 @@ const SearchBar = ({ showMovie }) => {
                     type="text"
                     className="search-input"
                     placeholder="search for a movie..."
+                    value={movie.title}
                     onChange={(e) => handleClick(e)}
                     onKeyDown={(e) => pressEnter(e)}
                 />
+                {
+                    (movie.title !== '')
+                        ? <button type="reset" className="reset-icon fas fa-times"
+                            onClick={() => resetInput()}>
+                        </button>
+                        : <button className="reset-icon-hidden fas fa-times"></button>
+                }
+
             </div>
         </div >
     );
