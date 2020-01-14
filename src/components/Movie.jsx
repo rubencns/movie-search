@@ -72,18 +72,8 @@ const Movie = ({ movie, id, poster, title, year, rating,
                             <h2>Cast:</h2>
                             <hr />
                             {
-                                /* movie.cast.map(p => (<li>{p.actor} - {p.character}</li>)) */
+                                movie.cast.map(p => (<li><span className="movie-actor">{p.actor}</span> - {p.character}</li>))
                             }
-
-                            <li>Joaquin Phoenix - Arthur Fleck</li>
-                            <li>Robert De Niro - Murray Franklin</li>
-                            <li>Zazie Beetz - Sophie Dumond</li>
-                            <li>Frances Conroy - Penny Fleck</li>
-                            <li>Brett Cullen - Thomas Wayne</li>
-                            <li>Shea Whigham - Detective Burke</li>
-                            <li>Bill Camp - Detective Garrity</li>
-                            <li>Glenn Fleshler - Randall</li>
-                            <li>Leigh Gill - Gary</li>
 
                         </ul>
                     </div>

@@ -32,10 +32,11 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 30px;
 
     &-item {
         margin: 20px;
+        text-align: center;
     }
 
     &-btn {
