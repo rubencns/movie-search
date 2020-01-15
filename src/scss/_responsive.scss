@@ -7,22 +7,23 @@
     }
 
     .nav {
+        
         &-menu {
             visibility: hidden;
             position: absolute;
             top: 82px;
             right: 0;
-            /* transform: translate3d(100%, 0, 0); */
+            // transform: translate3d(100%, 0, 0);
             background: #fff;
             border-radius: 5px;
-            /* @include transition; */
+            // @include transition;
             @include boxShadow;
             z-index: 3;
 
             &.show {
                 visibility: visible;
                 transform: translate3d(0, 0, 0);
-                @include transition;   
+                // @include transition; 
             }
         }
 
@@ -119,6 +120,18 @@
             font-style: italic;
         } 
     }
+
+    .fav-btn {
+        &-disable {
+            color: #fff;
+            background: $primary-color;
+
+            &:hover {
+                color: #fff;
+                background: $primary-color;
+            }
+        }
+    }
 }
 
 @media screen and (min-width: 375px) {
@@ -173,6 +186,22 @@
                 .movie-rating {
                     margin-right: 20px;
                 }
+            }
+        }
+    }
+
+    .fav-btn {
+
+        &:hover {
+            background: $primary-color;
+            color: #fff;
+        }
+
+        &-disable {
+
+            &:hover {
+                background: #fff;
+                color: $primary-color;
             }
         }
     }

@@ -63,19 +63,9 @@ a {
         font-weight: 600;
     }
 
-    &:hover {
-        background: $primary-color;
-        color: #fff;
-    }
-
     &-disable {
         color: #fff;
         background: $primary-color;
-
-        &:hover {
-            background: #fff;
-            color: $primary-color;
-        }
     }
 }
 
@@ -93,7 +83,7 @@ body {
     padding: 0 30px;
     background: #fff;
     @include boxShadow;
-
+    
     .fav-count {
         padding: 1.5px 3px;
         margin: 0 4px;
