@@ -73,6 +73,7 @@ body {
     font-family: $font-family;
     color: $text-color;
     min-height: 100vh;
+    width: 100vw;
 }
 
 .header {
@@ -102,8 +103,6 @@ body {
         position: sticky;
         top: 0;
         padding: 30px;
-        width: 90%;
-        margin: 0 auto;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -120,8 +119,10 @@ body {
             background: #fff;
             border-style: none;
             @include boxShadow;
+
             .search-input {
                 border-style: none;
+                width: 50vw;
             }
 
             .search-icon {
