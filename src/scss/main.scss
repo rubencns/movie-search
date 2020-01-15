@@ -102,14 +102,15 @@ body {
         position: sticky;
         top: 0;
         padding: 30px;
-        width: 100%;
+        width: 90%;
+        margin: 0 auto;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
         border-radius: 5px; 
         z-index: 2;
-    
+        
         &-bar {
             border: 1px solid #ddd;
             border-radius: 5px;
