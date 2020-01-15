@@ -5,7 +5,7 @@ import Home from './Home.jsx';
 import Favorites from './Favorites.jsx';
 
 const Routes = () => (
-    <Router>
+    <Router basename="movie-search">
         <Header />
         <Switch>
             <Route path="/" exact component={Home} />
