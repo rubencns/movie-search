@@ -5,13 +5,13 @@ import Home from './Home.jsx';
 import Favorites from './Favorites.jsx';
 
 const Routes = () => (
-  <Router basename="movie-search">
-    <Header />
-    <Switch>
-      <Route path="/" exact component={Home} />
-      <Route path="/favorites" component={Favorites} />
-    </Switch>
-  </Router>
+    <Router basename="movie-search">
+        <Header />
+        <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/favorites" component={Favorites} />
+        </Switch>
+    </Router>
 );
 
 export default Routes;
