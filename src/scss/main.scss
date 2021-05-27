@@ -3,193 +3,191 @@
 @import 'responsive';
 
 a {
-    text-decoration: none;
-    color: $text-color;
+  text-decoration: none;
+  color: $text-color;
 
-    &:hover {
-        color: $primary-color;
-    }
+  &:hover {
+    color: $primary-color;
+  }
 }
 
 .rate-fav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
 }
 
 .movie-rating {
-    color: $accent-color;
+  color: $accent-color;
 
-    span {
-        font-family: $font-family;
-        font-weight: 600;
-    }
+  span {
+    font-family: $font-family;
+    font-weight: 600;
+  }
 }
 
 .heading {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
 
-    &-item {
-        margin: 20px;
-        text-align: center;
+  &-item {
+    margin: 20px;
+    text-align: center;
+  }
+
+  &-btn {
+    cursor: pointer;
+
+    &:hover {
+      color: $primary-color;
     }
-
-    &-btn {
-        cursor: pointer;
-
-        &:hover {
-            color: $primary-color;
-        }
-    }
+  }
 }
 
 .fav-btn {
-    padding: 10px 8px;
-    font-size: 0.8rem;
-    color: $primary-color;
-    background: #fff;
-    border: 1px solid $primary-color;
-    border-radius: 5px;
-    cursor: pointer;
-    z-index: 1;
+  padding: 10px 8px;
+  font-size: 0.8rem;
+  color: $primary-color;
+  background: #fff;
+  border: 1px solid $primary-color;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1;
 
-    span {
-        font-family: $font-family;
-        font-weight: 600;
-    }
+  span {
+    font-family: $font-family;
+    font-weight: 600;
+  }
 
-    &-disable {
-        color: #fff;
-        background: $primary-color;
-    }
+  &-disable {
+    color: #fff;
+    background: $primary-color;
+  }
 }
 
 body {
-    font-family: $font-family;
-    color: $text-color;
-    min-height: 100vh;
-    width: 100vw;
+  font-family: $font-family;
+  color: $text-color;
+  min-height: 100vh;
+  width: 100vw;
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 80px;
-    padding: 0 30px;
-    background: #fff;
-    @include boxShadow;
-    
-    .fav-count {
-        padding: 1.5px 3px;
-        margin: 0 4px;
-        font-size: 0.9rem;
-        color: $primary-color;
-        border: 1px solid $primary-color;
-        border-radius: 3px;
-    }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 30px;
+  background: #fff;
+  @include boxShadow;
+
+  .fav-count {
+    padding: 1.5px 3px;
+    margin: 0 4px;
+    font-size: 0.9rem;
+    color: $primary-color;
+    border: 1px solid $primary-color;
+    border-radius: 3px;
+  }
 }
 
 .home {
+  padding-bottom: 50px;
 
-    padding-bottom: 50px;
+  .search {
+    position: sticky;
+    top: 0;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px;
+    z-index: 2;
 
-    .search {
-        position: sticky;
-        top: 0;
-        padding: 30px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        border-radius: 5px; 
-        z-index: 2;
-        
-        &-bar {
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            display: flex;  
-            justify-content: space-around;
-            align-items: center;
-            background: #fff;
-            border-style: none;
-            @include boxShadow;
+    &-bar {
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background: #fff;
+      border-style: none;
+      @include boxShadow;
 
-            .search-input {
-                border-style: none;
-                width: 50vw;
-            }
+      .search-input {
+        border-style: none;
+        width: 50vw;
+      }
 
-            .search-icon {
-                margin: 0 5px;
-                padding: 0 15px;
-                font-size: 1.2rem;
-                color: $primary-color;
-                border-right: 1px solid #ddd;
-                cursor: pointer;
+      .search-icon {
+        margin: 0 5px;
+        padding: 0 15px;
+        font-size: 1.2rem;
+        color: $primary-color;
+        border-right: 1px solid #ddd;
+        cursor: pointer;
 
-                &:hover {
-                    color: $accent-color;
-                }
-            }
-            
-            .reset-icon {
-                padding: 0 15px;
-                font-size: 1.6rem;
-                color: rgb(116, 116, 116);
-                background: none;
-                border: none;
-                cursor: pointer;
-                
-                &-hidden {
-                    padding: 0 15px;
-                    font-size: 1.6rem;
-                    visibility: hidden;
-                }
-            }
+        &:hover {
+          color: $accent-color;
         }
+      }
+
+      .reset-icon {
+        padding: 0 15px;
+        font-size: 1.6rem;
+        color: rgb(116, 116, 116);
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        &-hidden {
+          padding: 0 15px;
+          font-size: 1.6rem;
+          visibility: hidden;
+        }
+      }
     }
+  }
 }
 
 .favorites {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+  .card {
+    width: 250px;
+    margin: 50px 20px 20px 20px;
+    border-radius: 5px;
+    @include boxShadow;
+    cursor: pointer;
 
-    .card {
-        width: 250px;
-        margin: 50px 20px 20px 20px;
-        border-radius: 5px;
-        @include boxShadow;
-        cursor: pointer;
-
-        &-image {
-            width: 100%;
-            border-top-right-radius: 5px;
-            border-top-left-radius: 5px;
-        }
-
-        &-items {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 10px 25px;
-
-            .rate-fav {
-                margin: 10px 0 15px 0;
-            }
-
-            .movie-rating {
-                margin-right: 25px;
-            }
-        }
+    &-image {
+      width: 100%;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
     }
+
+    &-items {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 10px 25px;
+
+      .rate-fav {
+        margin: 10px 0 15px 0;
+      }
+
+      .movie-rating {
+        margin-right: 25px;
+      }
+    }
+  }
 }

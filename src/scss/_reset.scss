@@ -1,13 +1,15 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-ul, li {
-    list-style: none;
+ul,
+li {
+  list-style: none;
 }
 
-button:focus, input:focus{
-    outline: none;
+button:focus,
+input:focus {
+  outline: none;
 }
